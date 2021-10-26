@@ -3,7 +3,7 @@ spring:
     config:
       discovery:
         enabled: true
-        service-id: config-server
+        service-id: center
       name: business
       profile: dev
       label: master

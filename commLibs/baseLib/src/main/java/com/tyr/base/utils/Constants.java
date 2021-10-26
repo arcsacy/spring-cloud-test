@@ -16,7 +16,7 @@ public interface Constants {
 
     String ACCOUNT_HEADER = "username";
 
-    String[] SECURITY_IGNORED = new String[]{"/auth/**", "/**/api-docs", "/swagger-resources/**", "/error/**", "/images/**", "/*.html", "/**/*.html", "/**/*.css", "/**/*.js", "/**/*.xml", "/**/*.json"};
+    String[] SECURITY_IGNORED = new String[]{"/auth/**", "/actuator/**", "/**/api-docs", "/swagger-resources/**", "/error/**", "/images/**", "/*.html", "/**/*.html", "/**/*.css", "/**/*.js", "/**/*.xml", "/**/*.json"};
 
     //Service
     String BUSINESS_SERVICE = "business-service";

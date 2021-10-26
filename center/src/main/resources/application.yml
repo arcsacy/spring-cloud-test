@@ -1,6 +1,15 @@
 spring:
   application:
     name: center
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/arcsacy/spring-cloud-config
+          search-paths: config-repo
+          username: arcsacy
+          password: 0Nevergiveup0
+          default-label: master
 server:
   port: 9000
 eureka:
