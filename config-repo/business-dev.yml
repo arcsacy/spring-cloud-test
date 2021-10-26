@@ -1,0 +1,43 @@
+spring:
+  application:
+    name: business-service
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3333/db_test?useSSL=false&amp;zeroDateTimeBehavior=convertToNull&amp;useUnicode=true&amp;characterEncoding=UTF-8
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: ydea123
+    name: db_test
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    database: 10
+    password: ydea123
+    timeout: 5000
+server:
+  port: 9002
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:9000/eureka/
+logging:
+  file:
+    name: /logs/${spring.application.name}.log
+  level:
+    com.netflex: warn
+    com.tyr: debug
+management:
+  endpoint:
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
+swagger:
+  lib:
+    enabled: true
+    title: 业务服务
+    description: 业务服务接口文档
+    version: 1.0
+    base-package: com.tyr.business.controller
+feign:
+  hystrix:
+    enabled: true
