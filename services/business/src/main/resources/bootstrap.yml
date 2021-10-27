@@ -1,15 +1,27 @@
 server:
   port: 9002
 spring:
+  application:
+    name: business-service
   cloud:
     config:
       discovery:
         enabled: true
         service-id: config-server
-      name: business
+      name: business9002,redis,database
       profile: dev
       label: master
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9000/eureka/
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: refresh
+    shutdown:
+      enabled: true
+    health:
+      show-details: always

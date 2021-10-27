@@ -1,15 +1,27 @@
 server:
   port: 9001
 spring:
+  application:
+    name: auth-service
   cloud:
     config:
       discovery:
         enabled: true
         service-id: config-server
-      name: auth
+      name: auth,redis
       profile: dev
       label: master
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:9000/eureka/
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: refresh
+    shutdown:
+      enabled: true
+    health:
+      show-details: always

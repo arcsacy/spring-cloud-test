@@ -1,6 +1,8 @@
 server:
   port: 8888
 spring:
+  application:
+    name: gateway
   cloud:
     config:
       discovery:
@@ -13,3 +15,13 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:9000/eureka/
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: routes,refresh
+    shutdown:
+      enabled: true
+    health:
+      show-details: always
